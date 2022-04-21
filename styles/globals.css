@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 a {
@@ -13,4 +12,14 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --ghoneim-red: #c52d30;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 0.8rem;
+  }
 }
