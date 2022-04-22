@@ -14,18 +14,6 @@ import TSLogo from "./ts-logo.svg";
 
 const Container = styled.div`
   padding: 30px 50px;
-  opacity: 0;
-  animation: appear3 1s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  @keyframes appear3 {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 `;
 
 const LogosContainer = styled.div`

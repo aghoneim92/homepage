@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import { pxToEm } from "../utils/pxToRem";
 
@@ -15,6 +16,7 @@ const Container = styled.nav`
 const NavMenu = styled.div`
   display: flex;
   justify-content: center;
+  gap: 20px;
 `;
 
 const Brand = styled.a`
@@ -29,10 +31,11 @@ const Brand = styled.a`
   color: black;
 `;
 
-const NavLink = styled.a`
+const NavLink = styled.a<{ active: boolean }>`
   font-size: ${pxToEm(20)};
   padding: 10px 0;
-  border-bottom: 2px solid var(--ghoneim-red);
+  border-bottom: ${(props) =>
+    props.active ? "2px solid var(--ghoneim-red)" : "none"};
   font-weight: 900;
   user-select: none;
   text-decoration: none;
@@ -40,6 +43,7 @@ const NavLink = styled.a`
 `;
 
 export default function Navbar() {
+  const { pathname } = useRouter();
   return (
     <Container>
       <Link href="/" passHref>
@@ -47,7 +51,10 @@ export default function Navbar() {
       </Link>
       <NavMenu>
         <Link href="/" passHref>
-          <NavLink>Home</NavLink>
+          <NavLink active={pathname === "/"}>Home</NavLink>
+        </Link>
+        <Link href="/cv" passHref>
+          <NavLink active={pathname === "/cv"}>CV</NavLink>
         </Link>
       </NavMenu>
     </Container>
