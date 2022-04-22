@@ -1,8 +1,6 @@
 # Ahmed Ghoneim's Homepage
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-It's my personal homepage, developer portfolio, and cv.
+This is my personal [homepage](https://ahmedghoneim.site), developer portfolio, and cv. Built using Next.js.
 
 ## Getting Started
 
