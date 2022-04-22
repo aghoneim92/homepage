@@ -2,17 +2,31 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { pxToEm } from "../utils/pxToRem";
+import CTALink from "./Homepage/CTALink";
 
 const Container = styled.nav`
   display: grid;
-  grid-template-columns: 25px 1fr 25px;
-  height: 50px;
+  grid-template-columns: 200px 1fr 200px;
   align-items: center;
+  padding: 20px;
   @media (max-width: 425px) {
     font-size: 1.5rem;
   }
   @media print {
     display: none;
+  }
+
+  opacity: 0;
+  animation: appearNavbar 1s;
+  animation-delay: 200ms;
+  animation-fill-mode: forwards;
+  @keyframes appearNavbar {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 
@@ -45,8 +59,13 @@ const NavLink = styled.a<{ active: boolean }>`
   color: black;
 `;
 
+const PDFLink = styled(CTALink)`
+  font-size: ${pxToEm(20)};
+`;
+
 export default function Navbar() {
   const { pathname } = useRouter();
+
   return (
     <Container>
       <Link href="/" passHref>
@@ -60,6 +79,7 @@ export default function Navbar() {
           <NavLink active={pathname === "/cv"}>CV</NavLink>
         </Link>
       </NavMenu>
+      <PDFLink href="/Ahmed%20Ghoneim's%20CV.pdf">Download CV</PDFLink>
     </Container>
   );
 }
