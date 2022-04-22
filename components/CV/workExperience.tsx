@@ -2,106 +2,137 @@ const workExperience = [
   {
     from: "May 8th 2020",
     to: "Present",
-    company: "Knowledge Officer",
+    company: <a href="https://knowledgeofficer.com">Knowledge Officer</a>,
     companyDescription: "e-learning",
     position: "Senior Software Engineer",
-    responsibilities: [
-      "Developing and maintaining the user-facing frontend",
-      "Developed, from scratch, an admin portal for managing the platform",
-      "Menotoring junior and senior level developers on using Ruby, JavaScript, Typescript, and React",
-      "DevOps and infrastructure management",
-      "Ported the landing page to next.js",
-      "Introduced Typescript to the frontend app",
-      "Implemented phone number verification",
-    ],
-    technologies: [
-      "Ruby on Rails",
-      "Typescript",
-      "React",
-      "Next.js",
-      "Postgres",
-      "AWS",
-      "Linode",
-    ],
+    responsibilities: (
+      <ul>
+        <li>
+          Leading the development and maintenance the user-facing frontend using{" "}
+          <b>React</b>
+        </li>
+        <li>
+          Mentoring junior and senior level developers on using{" "}
+          <b>Ruby, JavaScript, Typescript, and React</b>
+        </li>
+        <li>
+          Developing and maintaining the backend using <b>Ruby on Rails</b>
+        </li>
+        <li>
+          Lead and developed, from scratch, an admin portal for managing the
+          platform using <b>React</b>
+        </li>
+        <li>
+          DevOps and infrastructure management on <b>AWS</b> and <b>Linode</b>
+        </li>
+        <li>
+          Lead porting the landing page to <b>next.js</b>
+        </li>
+        <li>Introduced Typescript to the frontend app</li>
+        <li>Implemented phone number verification</li>
+      </ul>
+    ),
   },
   {
     from: "February 12th 2019",
     to: "May 7th 2020",
-    company: "Careem",
+    company: <a href="https://careem.com">Careem</a>,
     location: "Cairo, Egypt",
     companyDescription: "Careem Bus",
     position: "Fullstack software engineer",
-    responsibilities: [
-      <span key={0}>
-        Created, along with a team, the internal portal for buses, bus lines,
-        schedule, driver, growth, and user management using <b>React</b> and{" "}
-        <b>Node.js</b>
-      </span>,
-      <span key={1}>
-        Worked on various backend tasks using <b>Node.js</b>
-      </span>,
-      <span key={2}>
-        Was responsible for mentoring other developers in Javascript,
-        Typescript, Node.js, and React
-      </span>,
-      <span key={3}>
-        Deployed and monitored our services using <b>AWS</b>, <b>Docker</b>, and{" "}
-        <b>NewRelic</b>
-      </span>,
-    ],
-    technologies: [
-      "React",
-      "Typescript",
-      "Node.js",
-      "Postgres",
-      "Docker",
-      "AWS",
-    ],
+    responsibilities: (
+      <ul>
+        <li>
+          Created, along with a team, the internal portal for buses, bus lines,
+          schedule, driver, growth, and user management using <b>React</b> and{" "}
+          <b>Node.js</b>
+        </li>
+        <li>
+          Worked on various backend tasks using <b>Node.js</b>
+        </li>
+        <li>
+          Was responsible for mentoring other developers in Javascript,
+          Typescript, Node.js, and React
+        </li>
+        <li>
+          Deployed and monitored our services using <b>AWS</b>, <b>Docker</b>,
+          and <b>NewRelic</b>
+        </li>
+      </ul>
+    ),
   },
   {
     from: "December 4th 2017",
     to: "October 31st 2018",
-    company: "friday.de",
+    company: <a href="https://friday.de">friday.de</a>,
     location: "Berlin, Germany",
     companyDescription: "Car Insurance",
     position: "Frontend developer",
-    responsibilities: [
-      "Worked on the friday.de website sales funnel using React",
-      "Worked on the user portal for managing your insurance using React",
-      "Built a public pricing API using Spring Boot",
-    ],
-    technologies: ["React", "Typescript", "Spring Boot", "AWS", "Docker"],
+    responsibilities: (
+      <ul>
+        <li>
+          Worked on the friday.de website sales funnel using <b>React</b>
+        </li>
+        <li>
+          Worked on the user portal for managing your insurance using{" "}
+          <b>React</b>
+        </li>
+        <li>
+          Built a public pricing API using <b>Spring Boot</b>
+        </li>
+      </ul>
+    ),
   },
   {
     from: "February 1st 2017",
     to: "October 31st 2017",
-    company: "didaris (previously pruefungspaten.de)",
+    company: (
+      <a href="https://didaris.com">didaris (previously pruefungspaten.de)</a>
+    ),
     location: "Berlin, Germany",
     companyDescription: "e-learning",
     position: "Freelance fullstack web developer",
-    responsibilities: [
-      "Worked on an internal portal to manage courses and invoices",
-      "Converted the website from UTF-16 to UTF-8",
-      "Converted the website from PHP 5 to PHP 7",
-      "Added git to the website",
-    ],
-    technologies: ["PHP", "mySQL"],
+    responsibilities: (
+      <ul>
+        <li>
+          Worked on an internal portal to manage courses and invoices using{" "}
+          <b>PHP</b> and <b>MySQL</b>
+        </li>
+        <li>Converted the website from UTF-16 to UTF-8</li>
+        <li>
+          Upgraded the website from PHP 5 to <b>PHP 7</b>
+        </li>
+        <li>
+          Added <b>git</b> to the website
+        </li>
+      </ul>
+    ),
   },
   {
     from: "August 2014",
     to: "August 2016",
-    company: "Eventum IT Solutions",
+    company: <a href="http://eventumsolutions.com">Eventum IT Solutions</a>,
     location: "Alexandria, Egypt",
     companyDescription: "Software solutions",
     position: "Full-stack web developer",
-    responsibilities: [
-      "Ported the network management system from jsp and jquery to React",
-      "Worked on the backend REST api using Spring MVC",
-      "Built a charting library using d3.js",
-      "Exported isomorphic charts to PDF",
-      "Built a chart annotation tool in React",
-    ],
-    technologies: ["React", "Spring MVC", "D3.js"],
+    responsibilities: (
+      <ul>
+        <li>
+          Ported the network management system from jsp and jquery to{" "}
+          <b>React</b>
+        </li>
+        <li>
+          Worked on the backend <b>REST</b> api using <b>Spring MVC</b>
+        </li>
+        <li>
+          Built a charting library using <b>d3.js</b>
+        </li>
+        <li>Exported isomorphic charts to PDF</li>
+        <li>
+          Built a chart annotation tool in <b>React</b>
+        </li>
+      </ul>
+    ),
   },
 ];
 

@@ -34,7 +34,7 @@ const Header = styled.header`
 
 const Name = styled.h1`
   font-size: ${pxToEm(30)};
-  font-weight: 900;
+  font-weight: bold;
   margin: 0;
 `;
 
@@ -67,7 +67,7 @@ const Main = styled.main`
 
 const CompanyName = styled.p`
   margin-bottom: 0;
-  font-weight: 900;
+  font-weight: bold;
   font-size: ${pxToEm(20)};
 `;
 
@@ -88,7 +88,7 @@ const RightSide = styled.div`
 `;
 
 const BSc = styled.p`
-  font-weight: 900;
+  font-weight: bold;
   font-size: ${pxToEm(18)};
   margin-bottom: 0;
 `;
@@ -120,15 +120,18 @@ export default function CV() {
         <div>
           <h2>Work Experience</h2>
           {workExperience.map(
-            ({
-              company,
-              companyDescription,
-              responsibilities,
-              position,
-              from,
-              to,
-            }) => (
-              <div key={company}>
+            (
+              {
+                company,
+                companyDescription,
+                responsibilities,
+                position,
+                from,
+                to,
+              },
+              index,
+            ) => (
+              <div key={index}>
                 <CompanyName>
                   {company}: {companyDescription}
                 </CompanyName>
@@ -137,13 +140,9 @@ export default function CV() {
                   <br />
                   {from} - {to}
                 </Position>
-                <ul>
-                  {responsibilities.map((responsibility, index) => (
-                    <li key={index}>{responsibility}</li>
-                  ))}
-                </ul>
+                {responsibilities}
               </div>
-            )
+            ),
           )}
         </div>
         <RightSide>
