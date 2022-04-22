@@ -65,7 +65,7 @@ const ProjectsPage: NextPage = () => {
             src="https://github.com/aghoneim92/ratlab/raw/master/ratlab.png"
             width={434}
             height={1464}
-            layout="fixed"
+            layout="intrinsic"
           />
         </ImageContainer>
         <p>More projects will be added soon, stay tuned!</p>
