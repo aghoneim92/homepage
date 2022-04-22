@@ -18,7 +18,7 @@ export default function DocumentComponent() {
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Red+Hat+Display&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Red+Hat+Display:wght@400;700&display=swap"
           rel="stylesheet"
         />
         <meta name="title" content="Ahmed Ghoneim's Homepage" />

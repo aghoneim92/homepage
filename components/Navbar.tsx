@@ -39,7 +39,6 @@ const NavMenu = styled.div`
 
 const Brand = styled.a`
   font-size: ${pxToEm(20)};
-  font-weight: 900;
   font-family: Ubuntu, sans-serif;
   display: flex;
   align-items: center;
@@ -52,9 +51,8 @@ const Brand = styled.a`
 const NavLink = styled.a<{ active: boolean }>`
   font-size: ${pxToEm(20)};
   padding: 10px 0;
-  border-bottom: ${(props) =>
+  border-bottom: ${props =>
     props.active ? "2px solid var(--ghoneim-red)" : "none"};
-  font-weight: 900;
   user-select: none;
   text-decoration: none;
   color: black;
