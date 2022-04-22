@@ -10,7 +10,8 @@ const Container = styled.nav`
   align-items: center;
   padding: 20px;
   @media (max-width: 425px) {
-    font-size: 1.5rem;
+    padding: 5px 0;
+    grid-template-columns: 25px 1fr 100px;
   }
   @media print {
     display: none;
@@ -61,6 +62,12 @@ const NavLink = styled.a<{ active: boolean }>`
 
 const PDFLink = styled(CTALink)`
   font-size: ${pxToEm(20)};
+
+  @media (max-width: 425px) {
+    padding: 5px;
+    font-size: ${pxToEm(16)};
+    text-align: center;
+  }
 `;
 
 export default function Navbar() {

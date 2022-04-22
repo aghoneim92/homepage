@@ -10,6 +10,9 @@ const Wrapper = styled.div`
   @media print {
     padding: 0 15px;
   }
+  @media (max-width: 425px) {
+    padding: 0 10px;
+  }
   max-width: 1300px;
   margin: 0 auto;
 `;

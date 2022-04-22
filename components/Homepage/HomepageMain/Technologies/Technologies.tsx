@@ -14,6 +14,10 @@ import TSLogo from "./ts-logo.svg";
 
 const Container = styled.div`
   padding: 30px 50px;
+  @media (max-width: 425px) {
+    padding: 30px 20px;
+    flex-direction: column;
+  }
 `;
 
 const LogosContainer = styled.div`
@@ -23,6 +27,10 @@ const LogosContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   margin-top: 40px;
+
+  @media (max-width: 425px) {
+    justify-content: center;
+  }
 `;
 
 const Logo = styled.div`

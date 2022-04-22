@@ -10,6 +10,9 @@ const Container = styled.div`
   margin-top: 20px;
   padding: 30px 50px;
   display: flex;
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;

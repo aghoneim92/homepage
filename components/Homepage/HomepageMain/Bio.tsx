@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { pxToRem } from "../../../utils/pxToRem";
 
+const Container = styled.div`
+  padding: 10px;
+`;
+
 const Title = styled.h3`
   text-align: center;
   font-size: 25px;
@@ -17,13 +21,13 @@ const Subtitle = styled.h2`
 
 export default function Bio() {
   return (
-    <div>
+    <Container>
       <Title>Bio</Title>
       <Subtitle>
         I wear all kinds of hats. I&apos;m a fullstack developer, a Rustacean,
         an embedded systems enthusiast, graphics programming beginner, OS
         Development wannabe, and so much more.
       </Subtitle>
-    </div>
+    </Container>
   );
 }
