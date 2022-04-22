@@ -10,6 +10,11 @@ const Container = styled.div`
   @media print {
     border: none;
   }
+  @media (max-width: 425px) {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
 `;
 
 const Header = styled.header`
@@ -18,6 +23,11 @@ const Header = styled.header`
   @media print {
     padding: 0;
     padding-bottom: 10px;
+  }
+  @media (max-width: 425px) {
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
   }
   box-shadow: 0 1.5px 2px -2px var(--ghoneim-red);
 `;
@@ -37,6 +47,10 @@ const Title = styled.h2`
 const ContactInfo = styled.div`
   margin-left: auto;
   text-align: right;
+  @media (max-width: 425px) {
+    margin-left: 0;
+    text-align: left;
+  }
 `;
 
 const Main = styled.main`
@@ -45,6 +59,10 @@ const Main = styled.main`
     padding: 10px;
   }
   display: flex;
+  @media (max-width: 425px) {
+    padding: 20px;
+    flex-direction: column-reverse;
+  }
 `;
 
 const CompanyName = styled.p`
@@ -63,6 +81,9 @@ const RightSide = styled.div`
   min-width: 300px;
   @media print {
     min-width: 250px;
+  }
+  @media (max-width: 425px) {
+    padding: 0;
   }
 `;
 

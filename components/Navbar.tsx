@@ -10,7 +10,7 @@ const Container = styled.nav`
   align-items: center;
   padding: 20px;
   @media (max-width: 425px) {
-    padding: 5px 0;
+    padding: 10px;
     grid-template-columns: 25px 1fr 100px;
   }
   @media print {

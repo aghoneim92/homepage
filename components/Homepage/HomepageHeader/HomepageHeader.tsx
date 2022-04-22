@@ -6,9 +6,12 @@ import styles from "./HomepageHeader.module.css";
 import { pxToRem } from "../../../utils/pxToRem";
 import CTALink from "../CTALink";
 
-const Header = styled.header`
+const Container = styled.header`
   display: flex;
   padding-top: 60px;
+  @media (max-width: 425px) {
+    padding-top: 20px;
+  }
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -74,7 +77,7 @@ const ContactLink = styled(CTALink)`
 
 export default function HomepageHeader() {
   return (
-    <Header>
+    <Container>
       <Hi>Hi, I&apos;m</Hi>
       <TopAnimation>
         <Title>Ahmed Ghoneim</Title>
@@ -97,6 +100,6 @@ export default function HomepageHeader() {
       <ContactLink href="mailto:ahmedghoneim92@gmail.com">
         Contact Me
       </ContactLink>
-    </Header>
+    </Container>
   );
 }
