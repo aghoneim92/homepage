@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import styled from "styled-components";
 import HomepageHeader from "../components/Homepage/HomepageHeader/HomepageHeader";
 import HomepageMain from "../components/Homepage/HomepageMain/HomepageMain";
 
