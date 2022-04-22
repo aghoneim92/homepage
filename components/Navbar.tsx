@@ -83,6 +83,9 @@ export default function Navbar() {
         <Link href="/cv" passHref>
           <NavLink active={pathname === "/cv"}>CV</NavLink>
         </Link>
+        <Link href="/projects" passHref>
+          <NavLink active={pathname === "/projects"}>Projects</NavLink>
+        </Link>
       </NavMenu>
       <PDFLink href="/Ahmed%20Ghoneim's%20CV.pdf">Download CV</PDFLink>
     </Container>
