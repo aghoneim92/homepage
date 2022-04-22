@@ -7,6 +7,9 @@ import "../styles/globals.css";
 const Wrapper = styled.div`
   min-height: 100vh;
   padding: 0 50px;
+  @media print {
+    padding: 0 15px;
+  }
   max-width: 1300px;
   margin: 0 auto;
 `;

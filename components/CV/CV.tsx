@@ -6,11 +6,19 @@ const Container = styled.div`
   margin: 30px;
   padding: 30px 0;
   border: 1px solid var(--ghoneim-red);
+
+  @media print {
+    border: none;
+  }
 `;
 
 const Header = styled.header`
   display: flex;
   padding: 30px 50px;
+  @media print {
+    padding: 0;
+    padding-bottom: 10px;
+  }
   box-shadow: 0 1.5px 2px -2px var(--ghoneim-red);
 `;
 
@@ -33,6 +41,9 @@ const ContactInfo = styled.div`
 
 const Main = styled.main`
   padding: 30px 50px;
+  @media print {
+    padding: 10px;
+  }
   display: flex;
 `;
 
@@ -50,6 +61,15 @@ const Position = styled.p`
 const RightSide = styled.div`
   padding: 0 20px;
   min-width: 300px;
+  @media print {
+    min-width: 250px;
+  }
+`;
+
+const BSc = styled.p`
+  font-weight: 900;
+  font-size: ${pxToEm(18)};
+  margin-bottom: 0;
 `;
 
 const Skills = styled.ul`
@@ -108,8 +128,7 @@ export default function CV() {
         <RightSide>
           <div>
             <h2>Education</h2>
-            BSc Computer Engineering
-            <br />
+            <BSc>BSc. Computer Engineering</BSc>
             Alexandria University
             <br />
             2009 - 2014

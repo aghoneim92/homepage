@@ -11,6 +11,9 @@ const Container = styled.nav`
   @media (max-width: 425px) {
     font-size: 1.5rem;
   }
+  @media print {
+    display: none;
+  }
 `;
 
 const NavMenu = styled.div`

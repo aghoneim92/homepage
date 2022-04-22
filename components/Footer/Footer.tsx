@@ -7,6 +7,9 @@ const Container = styled.footer`
   border-top: 1px solid var(--ghoneim-red);
   display: flex;
   align-items: center;
+  @media print {
+    display: none;
+  }
 `;
 
 const GithubLink = styled.a`
