@@ -8,8 +8,8 @@ const workExperience = [
     responsibilities: (
       <ul>
         <li>
-          Leading the development and maintenance the user-facing frontend using{" "}
-          <b>React</b>
+          Leading the development and maintenance of the user-facing frontend
+          using <b>React</b>
         </li>
         <li>
           Mentoring junior and senior level developers on using{" "}
