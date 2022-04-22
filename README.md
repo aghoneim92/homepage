@@ -7,8 +7,7 @@ This is my personal [homepage](https://ahmedghoneim.site), developer portfolio, 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
 ```
 
