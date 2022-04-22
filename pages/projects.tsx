@@ -45,7 +45,7 @@ const ProjectsPage: NextPage = () => {
         <ImageContainer>
           <Image
             alt="ShootEmUp"
-            src="https://github.com/mazenmelouk/ShootEmUp/raw/master/Screenshot.png"
+            src="/Screenshot.png"
             width={2552}
             height={1331}
             layout="responsive"
@@ -62,7 +62,7 @@ const ProjectsPage: NextPage = () => {
         <ImageContainer>
           <Image
             alt="Ratlab"
-            src="https://github.com/aghoneim92/ratlab/raw/master/ratlab.png"
+            src="/ratlab.png"
             width={434}
             height={1464}
             layout="intrinsic"
