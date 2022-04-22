@@ -20,7 +20,7 @@ const GithubLink = styled.a`
 export default function Footer() {
   return (
     <Container>
-      © Ahmed Ghoneim, 2022
+      © 2022 Ahmed Ghoneim
       <GithubLink
         href="https://github.com/aghoneim92"
         target="_blank"
