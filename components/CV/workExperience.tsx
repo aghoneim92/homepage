@@ -1,7 +1,25 @@
 const workExperience = [
   {
-    from: "May 8th 2020",
+    from: "July 24th 2022",
     to: "Present",
+    company: <a href="https://tempo.fit">Tempo</a>,
+    companyDescription: "Fitness",
+    position: "Senior Fullstack Engineer",
+    responsibilities: (
+      <ul>
+        <li>Leading the team responsible for content internal tooling</li>
+        <li>
+          Developing on the frontend using <b>React</b> and <b>Typescript</b>
+        </li>
+        <li>
+          Developing on the backend using <b>Python</b> and <b>Flask</b>
+        </li>
+      </ul>
+    ),
+  },
+  {
+    from: "May 8th 2020",
+    to: "June 30th 2022",
     company: <a href="https://knowledgeofficer.com">Knowledge Officer</a>,
     companyDescription: "e-learning",
     position: "Senior Software Engineer",
