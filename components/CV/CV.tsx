@@ -120,21 +120,9 @@ export default function CV() {
         <div>
           <h2>Work Experience</h2>
           {workExperience.map(
-            (
-              {
-                company,
-                companyDescription,
-                responsibilities,
-                position,
-                from,
-                to,
-              },
-              index,
-            ) => (
+            ({ company, responsibilities, position, from, to }, index) => (
               <div key={index}>
-                <CompanyName>
-                  {company}: {companyDescription}
-                </CompanyName>
+                <CompanyName>{company}</CompanyName>
                 <Position>
                   {position}
                   <br />

@@ -3,7 +3,6 @@ const workExperience = [
     from: "July 24th 2022",
     to: "Present",
     company: <a href="https://tempo.fit">Tempo</a>,
-    companyDescription: "Fitness",
     position: "Senior Fullstack Engineer",
     responsibilities: (
       <ul>
@@ -37,7 +36,6 @@ const workExperience = [
     from: "May 8th 2020",
     to: "June 30th 2022",
     company: <a href="https://knowledgeofficer.com">Knowledge Officer</a>,
-    companyDescription: "e-learning",
     position: "Senior Software Engineer",
     responsibilities: (
       <ul>
@@ -72,7 +70,6 @@ const workExperience = [
     to: "May 7th 2020",
     company: <a href="https://careem.com">Careem</a>,
     location: "Cairo, Egypt",
-    companyDescription: "Careem Bus",
     position: "Fullstack software engineer",
     responsibilities: (
       <ul>
@@ -124,7 +121,6 @@ const workExperience = [
       <a href="https://didaris.com">didaris (previously pruefungspaten.de)</a>
     ),
     location: "Berlin, Germany",
-    companyDescription: "e-learning",
     position: "Freelance fullstack web developer",
     responsibilities: (
       <ul>
@@ -147,7 +143,6 @@ const workExperience = [
     to: "August 2016",
     company: <a href="http://eventumsolutions.com">Eventum IT Solutions</a>,
     location: "Alexandria, Egypt",
-    companyDescription: "Software solutions",
     position: "Full-stack web developer",
     responsibilities: (
       <ul>
