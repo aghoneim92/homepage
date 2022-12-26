@@ -8,7 +8,7 @@ import CTALink from "../CTALink";
 
 const Container = styled.header`
   display: flex;
-  padding-top: 60px;
+  padding-top: 30px;
   @media (max-width: 425px) {
     padding-top: 20px;
   }
