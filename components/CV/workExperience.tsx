@@ -7,12 +7,28 @@ const workExperience = [
     position: "Senior Fullstack Engineer",
     responsibilities: (
       <ul>
-        <li>Leading the team responsible for content internal tooling</li>
         <li>
-          Developing on the frontend using <b>React</b> and <b>Typescript</b>
+          Responsible, along with my team, for developing backend services and
+          internal tooling
         </li>
         <li>
-          Developing on the backend using <b>Python</b> and <b>Flask</b>
+          Developing on the backend using <b>Python</b>, <b>Flask</b>, and{" "}
+          <b>GraphQL</b>
+        </li>
+        <li>
+          Maintaining CI/CD pipelines in <b>Gitlab</b>
+        </li>
+        <li>
+          Maintaining cloud infrastructure in <b>AWS</b> using <b>Terraform</b>
+        </li>
+        <li>
+          Monitoring performance using <b>Datadog</b>
+        </li>
+        <li>
+          On-call for handling incidents (<b>Pagerduty</b>)
+        </li>
+        <li>
+          Developing on the frontend using <b>React</b> and <b>Typescript</b>
         </li>
       </ul>
     ),
