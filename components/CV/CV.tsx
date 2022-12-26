@@ -58,10 +58,8 @@ const Main = styled.main`
   @media print {
     padding: 10px;
   }
-  display: flex;
   @media (max-width: 425px) {
     padding: 20px;
-    flex-direction: column-reverse;
   }
 `;
 
@@ -74,17 +72,6 @@ const CompanyName = styled.p`
 const Position = styled.p`
   margin-top: 0;
   font-weight: normal;
-`;
-
-const RightSide = styled.div`
-  padding: 0 20px;
-  min-width: 300px;
-  @media print {
-    min-width: 250px;
-  }
-  @media (max-width: 425px) {
-    padding: 0;
-  }
 `;
 
 const BSc = styled.p`
@@ -133,28 +120,26 @@ export default function CV() {
             ),
           )}
         </div>
-        <RightSide>
-          <div>
-            <h2>Education</h2>
-            <BSc>BSc. Computer Engineering</BSc>
-            Alexandria University
-            <br />
-            2009 - 2014
-            <br />
-            GPA 3.59
-            <br />
-            <br />
-          </div>
-          <div>
-            <h2>Skills</h2>
-            <Skills>
-              <li>Working effectively in a team</li>
-              <li>Quick to learn new technologies</li>
-              <li>Rapid prototyping of ideas</li>
-              <li>Following best practices</li>
-            </Skills>
-          </div>
-        </RightSide>
+        <div>
+          <h2>Education</h2>
+          <BSc>BSc. Computer Engineering</BSc>
+          Alexandria University
+          <br />
+          2009 - 2014
+          <br />
+          GPA 3.59
+          <br />
+          <br />
+        </div>
+        <div>
+          <h2>Skills</h2>
+          <Skills>
+            <li>Working effectively in a team</li>
+            <li>Quick to learn new technologies</li>
+            <li>Rapid prototyping of ideas</li>
+            <li>Following best practices</li>
+          </Skills>
+        </div>
       </Main>
     </Container>
   );
