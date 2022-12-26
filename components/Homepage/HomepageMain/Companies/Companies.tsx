@@ -1,10 +1,11 @@
 import Image from "next/image";
 import styled from "styled-components";
-import eventumLogo from "./eventum-logo.png";
-import didarisLogo from "./didaris-logo.png";
-import fridayLogo from "./friday-logo.svg";
 import careemLogo from "./careem-logo.svg";
+import didarisLogo from "./didaris-logo.png";
+import eventumLogo from "./eventum-logo.png";
+import fridayLogo from "./friday-logo.svg";
 import koLogo from "./ko-logo.svg";
+import tempoLogo from "./tempo-logo.svg";
 
 const Container = styled.div`
   margin-top: 20px;
@@ -74,6 +75,16 @@ export default function Companies() {
           layout="fixed"
           width={124}
           height={36}
+        />
+      </a>
+      <a target="_blank" rel="noreferrer" href="https://tempo.fit">
+        <Image
+          src={tempoLogo}
+          alt="Tempo"
+          title="Tempo"
+          layout="fixed"
+          width={93}
+          height={20}
         />
       </a>
     </Container>
