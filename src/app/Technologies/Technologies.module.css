@@ -1,0 +1,40 @@
+.container {
+  padding: 30px 50px;
+}
+
+@media (max-width: 425px) {
+  .container {
+    padding: 30px 20px;
+    flex-direction: column;
+  }
+}
+
+.logosContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+@media (max-width: 425px) {
+  .logosContainer {
+    justify-content: center;
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.contain {
+  object-fit: contain;
+}

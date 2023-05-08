@@ -1,0 +1,91 @@
+.container {
+  margin: 30px;
+  padding: 30px 0;
+  border: 1px solid var(--ghoneim-red);
+}
+
+.header {
+  display: flex;
+  padding: 30px 50px;
+  box-shadow: 0 1.5px 2px -2px var(--ghoneim-red);
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.contactInfo {
+  margin-left: auto;
+  text-align: right;
+}
+
+.main {
+  padding: 30px 50px;
+}
+
+.companyName {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.position {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+.bsc {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.skills {
+  margin-left: -20px;
+}
+
+@media print {
+  .container {
+    border: none;
+  }
+
+  .header {
+    padding: 0;
+    padding-bottom: 10px;
+  }
+
+  .main {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .header {
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contactInfo {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .main {
+    padding: 20px;
+  }
+}
