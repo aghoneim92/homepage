@@ -15,6 +15,10 @@ const workExperience = [
           <b>GraphQL</b>
         </li>
         <li>
+          Developing a realtime messaging system for workout guidance using{" "}
+          <b>Kafka</b> and <b>Pubnub</b>
+        </li>
+        <li>
           Maintaining CI/CD pipelines in <b>Gitlab</b>
         </li>
         <li>
