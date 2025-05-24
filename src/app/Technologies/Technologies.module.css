@@ -28,13 +28,6 @@
   flex-shrink: 0;
 }
 
-.title {
-  text-align: center;
-  font-size: 25px;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
 .contain {
   object-fit: contain;
 }
