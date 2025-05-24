@@ -7,8 +7,8 @@ This is my personal [homepage](https://ahmedghoneim.site), developer portfolio, 
 First, run the development server:
 
 ```bash
-yarn install
-yarn dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
