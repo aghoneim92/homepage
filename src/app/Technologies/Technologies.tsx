@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Technologies.module.css";
+import commonStyles from "../Common.module.css";
 import FirebaseLogo from "./firebase-logo.svg";
 import GoLogo from "./go-logo.svg";
 import JSLogo from "./javascript-logo.svg";
@@ -15,7 +16,7 @@ import TSLogo from "./ts-logo.svg";
 export default function Technologies() {
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>
+      <h3 className={commonStyles.sectionTitle}>
         <div className={styles.logosContainer}>
           <div className={styles.logo}>
             <Image
