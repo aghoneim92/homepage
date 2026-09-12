@@ -1,0 +1,239 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { contact, education, jobs, languages, technologies } from '../data/profile';
+---
+
+<BaseLayout title="Resume — Ahmed Ghoneim">
+  <div class="page">
+    <SiteHeader current="resume" />
+
+    <main>
+      <section class="intro container">
+        <h1 class="display-title">Resume</h1>
+        <p class="lede">
+          I am a full-stack software engineer passionate about developing and maintaining reliable,
+          user-friendly software. I am experienced in automated testing and working remotely while
+          collaborating and communicating effectively.
+        </p>
+        <div class="actions">
+          <a href={contact.resumePdf} download class="btn btn-primary">Download PDF</a>
+          <a href={`mailto:${contact.email}`} class="btn btn-ghost">Email me</a>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section class="stack container">
+        <div>
+          <h2 class="eyebrow">Languages</h2>
+          <p>{languages.join(', ')}</p>
+        </div>
+        <div>
+          <h2 class="eyebrow">Technologies</h2>
+          <p>{technologies.join(', ')}</p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section class="experience container">
+        <h2 class="eyebrow">Work experience</h2>
+        {
+          jobs.map((job) => (
+            <article class="job">
+              <div class="job-meta">
+                <h3 class="job-company">{job.company}</h3>
+                <p class="job-title">{job.title}</p>
+                <p class="job-dates">{job.dates}</p>
+                <p class="job-place">{job.place}</p>
+              </div>
+              <ul class="job-bullets">
+                {job.bullets.map((bullet) => (
+                  <li>{bullet}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </section>
+
+      <section class="education container">
+        <h2 class="eyebrow">Education</h2>
+        <div>
+          <h3 class="degree">{education.degree}</h3>
+          <p class="school">{education.school}</p>
+          <p class="edu-years">{education.years}</p>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-block: clamp(44px, 8vw, 88px) clamp(32px, 5vw, 56px);
+  }
+
+  .lede {
+    max-width: 56ch;
+    margin: 28px 0 0;
+    color: var(--ink-body);
+    font-size: clamp(1.1rem, 2.1vw, 1.4rem);
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  .actions {
+    margin-top: 32px;
+  }
+
+  .stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(24px, 4vw, 56px);
+    padding-block: clamp(40px, 6vw, 72px);
+  }
+
+  .stack > div {
+    min-width: 0;
+  }
+
+  .stack .eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .stack p {
+    margin: 0;
+    color: var(--ink-body);
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+
+  .experience {
+    padding-top: clamp(48px, 7vw, 80px);
+  }
+
+  .experience > .eyebrow {
+    margin-bottom: 44px;
+  }
+
+  .job {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px clamp(24px, 4vw, 56px);
+    padding-bottom: clamp(36px, 5vw, 52px);
+    margin-bottom: clamp(36px, 5vw, 52px);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .job-meta {
+    flex: 0 1 240px;
+    min-width: 0;
+  }
+
+  .job-company {
+    margin: 0 0 8px;
+    color: var(--ink-strong);
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.022em;
+  }
+
+  .job-title {
+    margin: 0 0 8px;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  .job-dates,
+  .job-place,
+  .edu-years {
+    color: var(--ink-subtle);
+    font-family: var(--font-display);
+    font-size: 13.5px;
+  }
+
+  .job-dates,
+  .edu-years {
+    letter-spacing: 0.05em;
+  }
+
+  .job-dates {
+    margin: 0;
+  }
+
+  .job-place {
+    margin: 4px 0 0;
+    letter-spacing: 0.02em;
+  }
+
+  .job-bullets {
+    display: flex;
+    flex: 1 1 340px;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .job-bullets li {
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr);
+    gap: 10px;
+    color: var(--ink-body);
+    font-size: clamp(1rem, 1.7vw, 1.15rem);
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  .job-bullets li::before {
+    content: '•';
+    color: var(--accent);
+  }
+
+  .education {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px clamp(24px, 4vw, 56px);
+    padding-bottom: var(--section-space);
+  }
+
+  .education > .eyebrow {
+    flex: 0 1 240px;
+    padding-top: 8px;
+  }
+
+  .education > div {
+    flex: 1 1 340px;
+    min-width: 0;
+  }
+
+  .degree {
+    margin: 0 0 8px;
+    color: var(--ink-strong);
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .school {
+    margin: 0;
+    color: var(--ink-body);
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .edu-years {
+    margin: 8px 0 0;
+  }
+</style>

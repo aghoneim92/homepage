@@ -1,0 +1,24 @@
+---
+import { contact } from '../data/profile';
+
+interface Props {
+  homeLink?: boolean;
+}
+
+const { homeLink = false } = Astro.props;
+---
+
+<footer class="site-footer container link-row">
+  <a href={`mailto:${contact.email}`}>{contact.email}</a>
+  <a href={contact.linkedin}>LinkedIn</a>
+  <a href={contact.github}>GitHub</a>
+  {homeLink && <a href="/">Back home</a>}
+  <span class="text-subtle">{contact.location}</span>
+</footer>
+
+<style>
+  .site-footer {
+    padding-block: clamp(40px, 6vw, 64px);
+    border-top: 1px solid var(--rule);
+  }
+</style>

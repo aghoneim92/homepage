@@ -1,0 +1,142 @@
+---
+import IOSDevice from '../components/IOSDevice';
+import { settings } from '../config';
+import { nav } from '../data/profile';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const deviceWidth = 402;
+const { deviceHeight } = settings.mobilePreview;
+---
+
+<BaseLayout title="Phone preview — Ahmed Ghoneim" noindex>
+  <div class="preview">
+    <header>
+      <div>
+        <p class="kicker">Phone preview &middot; {deviceWidth} &times; {deviceHeight}</p>
+        <h1>All three pages, phone width</h1>
+      </div>
+      <nav aria-label="Pages">
+        {
+          nav.map((page) => (
+            <a href={page.href} class="tap-target">
+              Open {page.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+
+    <p class="note">
+      Each frame is the real page rendered in a true {deviceWidth}px viewport, so type scales and
+      column counts are exactly what a phone gets. Scroll inside a frame to check the whole page.
+      These frames pick up changes on reload.
+    </p>
+
+    <div class="devices">
+      {
+        nav.map((page) => (
+          <div class="device">
+            <IOSDevice dark width={deviceWidth} height={deviceHeight}>
+              <div class="screen">
+                <iframe src={page.href} title={page.label} />
+              </div>
+            </IOSDevice>
+            <p class="label">{page.label}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :global(body) {
+    background: #1b1322;
+    font-family: var(--font-display);
+  }
+
+  .preview {
+    padding: clamp(24px, 4vw, 48px) clamp(18px, 4vw, 48px) clamp(40px, 6vw, 72px);
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 28px;
+    align-items: baseline;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto clamp(28px, 4vw, 44px);
+  }
+
+  .kicker {
+    margin: 0 0 10px;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    color: var(--ink-strong);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: baseline;
+    font-size: 15px;
+  }
+
+  .note {
+    max-width: 62ch;
+    margin: 0 auto clamp(28px, 4vw, 44px);
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+
+  .devices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(28px, 4vw, 56px);
+    align-items: start;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .device {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .screen {
+    height: 100%;
+    padding-top: 52px;
+    background: var(--bg);
+  }
+
+  .screen iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: var(--bg);
+  }
+
+  .label {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+</style>

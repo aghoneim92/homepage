@@ -1,0 +1,227 @@
+---
+import type { SideProject } from '../data/profile';
+
+interface Props {
+  project: SideProject;
+}
+
+const { project } = Astro.props;
+const { screenshot } = project;
+const repoLabel = project.repo.replace(/^https:\/\//, '');
+---
+
+<article class="project">
+  <div class="shot">
+    {
+      screenshot.video ? (
+        <video
+          src={screenshot.video}
+          poster={screenshot.src}
+          width={screenshot.width}
+          height={screenshot.height}
+          aria-label={screenshot.alt}
+          muted
+          loop
+          playsinline
+          preload="none"
+          data-autoplay
+        />
+      ) : (
+        <img
+          src={screenshot.src}
+          alt={screenshot.alt}
+          width={screenshot.width}
+          height={screenshot.height}
+          loading="lazy"
+          decoding="async"
+        />
+      )
+    }
+  </div>
+  <div class="body">
+    <h3 class="name"><a href={project.repo}>{project.name}</a></h3>
+    <p class="description">{project.description}</p>
+    {
+      project.collaborators && (
+        <p class="credit">
+          Built with{' '}
+          {project.collaborators.map((person, index) => (
+            <>
+              {index > 0 && ', '}
+              {person.url ? (
+                <a href={person.url}>{person.name}</a>
+              ) : (
+                person.name
+              )}
+            </>
+          ))}
+        </p>
+      )
+    }
+    <ul class="stack" aria-label="Built with">
+      {project.stack.map((tech) => <li>{tech}</li>)}
+    </ul>
+    <p class="links">
+      <span class="repo">{repoLabel}</span>
+      {
+        project.demo && (
+          <a href={project.demo} class="demo">
+            Play it →
+          </a>
+        )
+      }
+    </p>
+  </div>
+</article>
+
+<script>
+  // Loop preview clips only while they are on screen, and never for visitors
+  // who prefer reduced motion — they keep the poster frame.
+  const motionOk = window.matchMedia('(prefers-reduced-motion: no-preference)');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const { target, isIntersecting } of entries) {
+        const video = target as HTMLVideoElement;
+        if (isIntersecting && motionOk.matches) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      }
+    },
+    { threshold: 0.25 },
+  );
+
+  for (const video of document.querySelectorAll('video[data-autoplay]')) {
+    observer.observe(video);
+  }
+</script>
+
+<style>
+  .project {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--rule-soft);
+    border-radius: 6px;
+    background: var(--surface);
+  }
+
+  .project:hover {
+    border-color: var(--accent);
+    background: var(--surface-hover);
+  }
+
+  .project:has(.name a:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .shot {
+    aspect-ratio: 16 / 10;
+    border-bottom: 1px solid var(--rule-soft);
+    background: var(--bg-deep);
+  }
+
+  .shot img,
+  .shot video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 22px 24px 24px;
+  }
+
+  .name {
+    margin: 0 0 10px;
+    color: var(--ink-strong);
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .name a,
+  .name a:hover {
+    color: inherit;
+  }
+
+  /* Stretch the title link over the whole card. */
+  .name a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .name a:focus-visible {
+    outline: none;
+  }
+
+  .description {
+    margin: 0 0 18px;
+    color: var(--ink-body);
+    font-size: 1.02rem;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  .credit {
+    margin: -8px 0 18px;
+    color: var(--ink-muted);
+    font-family: var(--font-display);
+    font-size: 14px;
+  }
+
+  /* Sits above the stretched title link so it stays clickable. */
+  .credit a {
+    position: relative;
+    z-index: 1;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .stack li {
+    padding: 3px 10px;
+    border: 1px solid var(--outline);
+    border-radius: 999px;
+    color: var(--ink-muted);
+    font-family: var(--font-display);
+    font-size: 12.5px;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: auto 0 0;
+    font-family: var(--font-display);
+    font-size: 14px;
+  }
+
+  .repo {
+    color: var(--ink-muted);
+    overflow-wrap: anywhere;
+  }
+
+  /* Sits above the stretched title link so it stays clickable. */
+  .demo {
+    position: relative;
+    z-index: 1;
+  }
+</style>

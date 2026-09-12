@@ -1,0 +1,42 @@
+---
+import type { GalleryImage } from '../data/gallery';
+
+interface Props {
+  images: GalleryImage[];
+  columnWidth: string;
+  showCaptions: boolean;
+}
+
+const { images, columnWidth, showCaptions } = Astro.props;
+---
+
+<div class="masonry">
+  {
+    images.map((image) => (
+      <figure>
+        <img
+          src={image.src}
+          alt={image.caption}
+          width={image.width}
+          height={image.height}
+          loading="lazy"
+          decoding="async"
+          class="media"
+        />
+        {showCaptions && <figcaption class="caption">{image.caption}</figcaption>}
+      </figure>
+    ))
+  }
+</div>
+
+<style define:vars={{ columnWidth }}>
+  .masonry {
+    column-width: var(--columnWidth);
+    column-gap: 14px;
+  }
+
+  figure {
+    margin: 0 0 14px;
+    break-inside: avoid;
+  }
+</style>

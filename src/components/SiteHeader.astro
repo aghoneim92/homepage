@@ -1,0 +1,74 @@
+---
+import { contact, nav, type PageId } from '../data/profile';
+
+interface Props {
+  current: PageId;
+}
+
+const { current } = Astro.props;
+---
+
+<header class="site-header container">
+  <a href="/" class="brand tap-target">{contact.name}</a>
+  <nav aria-label="Main">
+    {
+      nav.map((item) =>
+        item.id === current ? (
+          <span class="current" aria-current="page">
+            {item.label}
+          </span>
+        ) : (
+          <a href={item.href} class="tap-target">
+            {item.label}
+          </a>
+        ),
+      )
+    }
+    <a href={`mailto:${contact.email}`} class="tap-target">Email</a>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px 28px;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-top: 26px;
+  }
+
+  .brand {
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+    align-items: baseline;
+    font-family: var(--font-display);
+    font-size: 15px;
+    letter-spacing: 0.01em;
+  }
+
+  nav a {
+    color: var(--ink-muted);
+  }
+
+  nav a:hover,
+  .brand:hover {
+    color: var(--link-hover);
+  }
+
+  .current {
+    padding: 13px 7px 11px;
+    margin: -13px -7px -11px;
+    border-bottom: 2px solid var(--accent);
+    color: var(--ink);
+  }
+</style>

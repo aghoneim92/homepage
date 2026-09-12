@@ -1,0 +1,124 @@
+---
+import MasonryGrid from '../components/MasonryGrid.astro';
+import ResumableVideo from '../components/ResumableVideo';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { settings } from '../config';
+import { gallerySections } from '../data/gallery';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { showCaptions, density } = settings.gallery;
+const columnWidth = density === 'dense' ? '220px' : '320px';
+---
+
+<BaseLayout
+  title="Gallery — Ahmed Ghoneim"
+  description="Coastlines, dinners and plastic bricks. Photography, Lego builds and cooking by Ahmed Ghoneim."
+>
+  <div class="page">
+    <SiteHeader current="gallery" />
+
+    <main>
+      <section class="intro container">
+        <h1 class="display-title">Gallery</h1>
+        <p class="lede">
+          Coastlines, dinners and plastic bricks. The things I do when I'm not at a keyboard.
+        </p>
+        <nav class="jump" aria-label="Gallery sections">
+          {gallerySections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}
+        </nav>
+      </section>
+
+      {
+        gallerySections.map((section) => (
+          <section id={section.id} class="section container">
+            <div class="section-intro">
+              <h2 class="eyebrow">{section.title}</h2>
+              <p>{section.blurb}</p>
+            </div>
+            {section.video && (
+              <figure class="feature">
+                <ResumableVideo
+                  client:visible
+                  src={section.video.src}
+                  poster={section.video.poster}
+                  width={section.video.width}
+                  height={section.video.height}
+                  storageKey={section.video.storageKey}
+                />
+                {showCaptions && <figcaption class="caption">{section.video.caption}</figcaption>}
+              </figure>
+            )}
+            <MasonryGrid
+              images={section.images}
+              columnWidth={columnWidth}
+              showCaptions={showCaptions}
+            />
+          </section>
+        ))
+      }
+    </main>
+
+    <SiteFooter homeLink />
+  </div>
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-block: clamp(44px, 8vw, 88px) clamp(36px, 5vw, 60px);
+  }
+
+  .lede {
+    max-width: 52ch;
+    margin: 26px 0 0;
+    color: var(--ink-body);
+    font-size: clamp(1.1rem, 2.1vw, 1.4rem);
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+    font-family: var(--font-display);
+    font-size: 14.5px;
+  }
+
+  .jump a {
+    padding: 9px 18px;
+    border: 1px solid var(--outline-mid);
+    border-radius: 999px;
+    color: var(--ink);
+  }
+
+  .jump a:hover {
+    border-color: var(--accent);
+    color: var(--link-hover);
+  }
+
+  .section {
+    padding-bottom: var(--section-space);
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    align-items: baseline;
+    padding-block: clamp(32px, 4vw, 52px) clamp(24px, 3vw, 36px);
+  }
+
+  .section-intro p {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .feature {
+    margin: 0 0 14px;
+  }
+</style>
