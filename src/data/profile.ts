@@ -72,8 +72,22 @@ export interface SideProject {
 
 // Descriptions, stacks and screenshots come from each repo's README, topics and
 // language stats on GitHub (checked 2026-09-11). Ratlab's Firebase demo
-// (ratlab-40a57.web.app) was not responding, so it has no demo link.
+// (ratlab-40a57.web.app) was not responding, so it has no demo link. The
+// homepage entry is this repo, so it needs no demo link either.
 export const sideProjects: SideProject[] = [
+  {
+    name: 'homepage',
+    repo: 'https://github.com/aghoneim92/homepage',
+    description:
+      'This site: a static portfolio built with Astro and React, typed end to end, and deployed to Cloudflare Workers from GitHub Actions.',
+    stack: ['Astro', 'React', 'TypeScript', 'Cloudflare Workers'],
+    screenshot: {
+      src: '/assets/projects/homepage.webp',
+      width: 1200,
+      height: 750,
+      alt: 'The homepage hero: the name Ahmed Ghoneim beside a portrait on a deep plum background',
+    },
+  },
   {
     name: 'rubiks',
     repo: 'https://github.com/aghoneim92/rubiks',
