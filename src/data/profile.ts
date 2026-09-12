@@ -92,9 +92,10 @@ export const sideProjects: SideProject[] = [
   {
     name: 'rubiks',
     repo: 'https://github.com/aghoneim92/rubiks',
+    demo: 'https://rubiks.ahmedghoneim.online',
     description:
-      "An interactive Rubik's Cube rendered with OpenGL and hand-written GLSL shaders. Written in C++ and built with CMake on macOS, Linux and Windows.",
-    stack: ['C++', 'OpenGL', 'GLSL', 'CMake'],
+      "An interactive Rubik's Cube rendered with OpenGL and hand-written GLSL shaders. Written in C++ and built with CMake on macOS, Linux and Windows, and ported to the browser with WebAssembly and WebGL through Emscripten.",
+    stack: ['C++', 'OpenGL', 'GLSL', 'CMake', 'WebAssembly', 'Emscripten'],
     screenshot: {
       src: '/assets/projects/rubiks.webp',
       video: '/assets/projects/rubiks.mp4',
