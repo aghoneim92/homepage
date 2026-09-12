@@ -1,0 +1,168 @@
+/* Card styling for the generated social preview images. Mirrors the palette and
+   type scale in src/styles/global.css so the cards look like the site. */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+  background: #2e1a3b;
+  color: #f2ece4;
+  font-family: Spectral, Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 56px;
+  width: 1200px;
+  height: 630px;
+  padding: 64px 64px 60px;
+  background:
+    radial-gradient(120% 90% at 0% 0%, rgb(232 145 58 / 0.16), transparent 58%),
+    radial-gradient(90% 80% at 100% 100%, rgb(56 32 74 / 0.9), transparent 60%),
+    #2e1a3b;
+}
+
+.card.text-only {
+  grid-template-columns: 1fr;
+}
+
+/* Left column */
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  /* Leaves room for the absolutely positioned footer rule. */
+  padding-bottom: 96px;
+}
+
+.kicker {
+  margin: 0 0 24px;
+  color: #e8913a;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: #f8f3ec;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-size: 104px;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+
+.text-only .title {
+  font-size: 128px;
+}
+
+.lede {
+  max-width: 32ch;
+  margin: 32px 0 0;
+  color: #e4d8ee;
+  font-size: 28px;
+  line-height: 1.45;
+}
+
+.text-only .lede {
+  max-width: 46ch;
+  font-size: 31px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 9px 18px;
+  border: 1px solid rgb(242 236 228 / 0.24);
+  border-radius: 999px;
+  color: #eee6f5;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* Right column */
+
+.visual {
+  display: flex;
+  align-items: center;
+}
+
+.portrait {
+  width: 100%;
+  height: 466px;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: 50% 22%;
+}
+
+.collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  height: 466px;
+}
+
+.collage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.collage img:first-child {
+  grid-row: span 2;
+}
+
+/* Footer rule */
+
+.footer {
+  position: absolute;
+  inset: auto 64px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 26px;
+  border-top: 1px solid rgb(242 236 228 / 0.14);
+  color: #a794b8;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card:not(.text-only) .footer {
+  right: 540px;
+}
+
+.footer .site {
+  color: #f0a95c;
+}

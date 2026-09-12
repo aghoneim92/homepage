@@ -31,3 +31,13 @@ plain Astro with no client JavaScript.
 | `pnpm check`   | Run `astro check` (TypeScript + Astro diagnostics) |
 | `pnpm lint`    | Lint with oxlint (`pnpm lint:fix` to autofix)      |
 | `pnpm format`  | Format with oxfmt (`pnpm format:check` in CI)      |
+
+## Social previews
+
+Every page carries Open Graph and Twitter card tags from `src/layouts/BaseLayout.astro`;
+`/resume` and `/gallery` override the card through its `image` and `imageAlt` props.
+
+The cards are committed as static files under `public/assets/og/`. Regenerate them with
+`node scripts/build-og-images.mjs` after changing their wording or `scripts/og-card.css`.
+The script renders the cards in headless Chrome, so it needs Chrome installed and runs on
+macOS only.

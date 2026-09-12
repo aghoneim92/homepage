@@ -24,3 +24,18 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+
+## Social previews
+
+Open Graph and Twitter card tags live in `src/layouts/BaseLayout.astro`. Pages override
+the card with the `image` and `imageAlt` props.
+
+The cards themselves are committed under `public/assets/og/`. Regenerate them after
+changing the wording or the design:
+
+```
+node scripts/build-og-images.mjs
+```
+
+It renders `scripts/og-card.css` in headless Chrome, so it needs Chrome installed and
+runs on macOS only.
