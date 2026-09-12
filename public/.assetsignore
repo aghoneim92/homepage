@@ -1,0 +1,3 @@
+# Copied to dist/ at build time; Wrangler skips these when uploading assets.
+# Local-only design scratch page — built for `astro dev`, never deployed.
+mobile-preview

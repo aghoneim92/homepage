@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "deploy": "pnpm build && wrangler deploy",
     "astro": "astro",
     "check": "astro check",
     "lint": "oxlint",
@@ -25,7 +26,8 @@
     "@types/react-dom": "^19.3.0",
     "oxfmt": "^0.67.0",
     "oxlint": "^1.82.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "wrangler": "^4.131.0"
   },
   "engines": {
     "node": ">=22.12.0"

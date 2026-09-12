@@ -2,7 +2,8 @@
 import { contact, nav, type PageId } from '../data/profile';
 
 interface Props {
-  current: PageId;
+  /** Omitted on pages that are not in the nav, such as 404. */
+  current?: PageId;
 }
 
 const { current } = Astro.props;

@@ -1,0 +1,82 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { nav } from '../data/profile';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found — Ahmed Ghoneim"
+  description="That page does not exist. Here are the ones that do."
+  noindex
+>
+  <div class="page">
+    <SiteHeader />
+
+    <main>
+      <section class="intro container">
+        <p class="eyebrow">Error 404</p>
+        <h1 class="display-title">Nothing<br />here</h1>
+        <p class="lede">
+          This page either moved or never existed. No harm done — everything else is still where it
+          should be.
+        </p>
+        <div class="actions">
+          <a href="/" class="btn btn-primary">Back home</a>
+          <a href="/gallery" class="btn btn-ghost">See the gallery</a>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section class="section container">
+        <h2 class="eyebrow">Try one of these</h2>
+        <ul class="pages">
+          {
+            nav.map((item) => (
+              <li>
+                <a href={item.href}>{item.label} →</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-block: clamp(44px, 8vw, 88px) clamp(48px, 7vw, 80px);
+  }
+
+  .eyebrow {
+    margin-bottom: 22px;
+  }
+
+  .lede {
+    max-width: 46ch;
+    margin: 26px 0 32px;
+    color: var(--ink-body);
+    font-size: clamp(1.1rem, 2.1vw, 1.4rem);
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  .section {
+    padding-block: clamp(32px, 4vw, 52px) var(--section-space);
+  }
+
+  .pages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 32px;
+    padding: 0;
+    margin: 22px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    list-style: none;
+  }
+</style>
