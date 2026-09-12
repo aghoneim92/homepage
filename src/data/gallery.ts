@@ -115,7 +115,7 @@ export const gallerySections: GallerySection[] = [
         src: '/assets/web/cook-shakshuka.jpg',
         width: 1400,
         height: 1050,
-        caption: 'Shakshuka, four eggs deep',
+        caption: 'Salmon with dill and green beans',
       },
       {
         src: '/assets/web/cook-breakfast.jpg',
@@ -134,7 +134,7 @@ export const gallerySections: GallerySection[] = [
         src: '/assets/web/cook-redvelvet.jpg',
         width: 1400,
         height: 1050,
-        caption: 'Red velvet, mid-assembly',
+        caption: 'Red velvet ice cream cake',
       },
     ],
   },
