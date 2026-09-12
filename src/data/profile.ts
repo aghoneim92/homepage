@@ -55,6 +55,8 @@ export interface SideProject {
   repo: string;
   /** Live build, only when it is still online. */
   demo?: string;
+  /** Call to action for the demo link. Defaults to "Play it". */
+  demoLabel?: string;
   description: string;
   /** Credit for the people this was built with, when it was not a solo project. */
   collaborators?: { name: string; url?: string }[];
@@ -71,9 +73,8 @@ export interface SideProject {
 }
 
 // Descriptions, stacks and screenshots come from each repo's README, topics and
-// language stats on GitHub (checked 2026-09-11). Ratlab's Firebase demo
-// (ratlab-40a57.web.app) was not responding, so it has no demo link. The
-// homepage entry is this repo, so it needs no demo link either.
+// language stats on GitHub (checked 2026-09-11). The homepage entry is this
+// repo, so it needs no demo link.
 export const sideProjects: SideProject[] = [
   {
     name: 'homepage',
@@ -122,6 +123,8 @@ export const sideProjects: SideProject[] = [
   {
     name: 'ratlab',
     repo: 'https://github.com/aghoneim92/ratlab',
+    demo: 'https://ratlab.ahmedghoneim.online',
+    demoLabel: 'Try it',
     description:
       'An open-source matrix calculator with MATLAB-style syntax: ranges, element-wise operations, transposes. The engine is Rust compiled to WebAssembly, with a React and TypeScript front end.',
     stack: ['Rust', 'WebAssembly', 'React', 'TypeScript'],

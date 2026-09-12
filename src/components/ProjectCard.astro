@@ -66,7 +66,7 @@ const repoLabel = project.repo.replace(/^https:\/\//, '');
       {
         project.demo && (
           <a href={project.demo} class="demo">
-            Play it →
+            {project.demoLabel ?? 'Play it'} →
           </a>
         )
       }
